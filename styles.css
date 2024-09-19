@@ -1,0 +1,543 @@
+/* Общие стили для всего тела документа */
+body {
+    font-family: Montserrat, sans-serif; /* Шрифт страницы */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    background-color: #EAEAEA; /* Цвет фона страницы */
+}
+
+/* Стили для шапки сайта */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Устанавливаем высокий уровень z-index, чтобы элемент отображался поверх остального контента */
+    /*box-shadow: 0 2px 4px #0000001a; /* Добавляем тень для эффекта отделения от контента */
+    font-family: Montserrat;
+    background: #EAEAEA; /* серый фон для шапки */
+    color: #101010; /* черный цвет текста */
+    padding: 15px 85px; /* Внутренние отступы */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+/* Стили для названия магазина QPICK */
+.store-name {
+    cursor: pointer; /* Указатель при наведении мыши */
+    font-family: 'Montserrat', sans-serif; /* Применяем шрифт Montserrat */
+    font-size: 25px; /* Размер шрифта */
+    font-weight: 700; /* Жирный шрифт */
+    line-height: 30.48px; /* Высота строки */
+    width: 85px; /* Ширина элемента */
+    height: 30px; /* Высота элемента */
+    top: 15px; /* Отступ сверху */
+    gap: 0px; /* Интервал между элементами (в данном случае не используется) */
+    opacity: 1; /* Изначальная непрозрачность (невидимо) */
+    margin-left: 75px; /* Отступ слева */
+    margin-right: 1013.49px;
+}
+
+/* Стили для описания продукта - "Наушники" */
+.product-description {
+    font-family: 'Montserrat', sans-serif; /* Применяем шрифт Montserrat */
+    color: #838383;
+    width: 114px;
+    height: 24px;
+    top: 110px;
+    margin-left: 182px; /* Отступ слева */
+    gap: 0px;
+    opacity: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    
+}
+
+/* Избранное */
+.favorite-icon { 
+    width: 22px;
+    height: 20px;
+    gap: 10px;
+    margin-left: 10px; 
+    opacity: 1px;
+}
+
+/* корзина */
+.cart-icon {
+    width: 23.2px;
+    height: 23.2px;
+    top: 19.96px;
+    margin-right: 100px;
+    left: 1080.49px;
+    gap: 0px;
+    opacity: 1px;
+    margin-left: 45px;
+}
+
+/* Стили для названия товара - "Наушники" */
+.product-title {
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+    width: 114px;
+    height: 24px;
+    position: relative; /* Позиционирование относительно родителя */
+    top: 50px; /* Отступ сверху */
+    left: 182px; /* Отступ слева */
+    gap: 50px; /* Интервал между элементами (в данном случае не используется) */
+    opacity: 1; /* Изначально невидимо */
+    font-family: 'Montserrat', sans-serif; /* Шрифт для названия товара */
+    font-size: 20px; /* Размер шрифта для названия товара */
+    font-weight: 600; /* Жирность шрифта */
+    line-height: 50.38px; /* Высота строки */
+    text-align: left; /* Выравнивание текста */
+    color: #838383; /* Цвет текста */
+}
+
+
+.product-card {
+    display: inline-block; 
+    width: 350px;
+    height: 407px;
+    position: relative;
+    top: 80px; /*отступ после шапки сайта*/
+    left: 182px;
+    margin: 0 25px 50px; /* Отступы справа и слева по 25px, снизу 30px */
+    opacity: 1;
+    border-radius: 30px; 
+    box-shadow: 0 2px 10px #EAEAEA; 
+    background-color: #fff; 
+}
+
+.product-image {
+    width: 219.61px;
+    height: 237.07px;
+    position: absolute;
+    top: 10px; /* Отступ сверху */
+    left: 65px; /* Центрируем изображение */
+    opacity: 1;
+}
+
+.product-info {
+    width: 310.04px;
+    height: 74px;
+    position: absolute;
+    top: 280px; /* Под изображением */
+    left: 20px; /* Выравнивание по левому краю */
+    gap: 0px;
+    
+}
+
+.model-title {
+    width: 144px;
+    height: 20.97px;
+    margin-top: 23px; /* Отступ сверху */
+    left: 203.96px;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20.72px;
+    text-align: left;
+    color: #1C1C27;
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+}
+
+.product-price {
+    width: 59px;
+    height: 21px;
+    margin-top: -20px;
+    left: 452px;
+    gap: 0px;
+    opacity: 1px;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20.72px;
+    text-align: left;
+    color: #FFA542;
+    margin-left: 240px;
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+}
+
+.product-lastprice {
+    display: flex;
+    width: 44px;
+    height: 0px;
+    margin-top: auto;
+    left: 460px;
+    gap: 0px;
+    opacity: 1px;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15.85px;
+    text-align: left;
+    color: #FFCE7F;
+    margin-left: 245px;
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+    text-decoration: line-through; /* Добавляет линию через текст */
+}
+
+.rating-conteiner {
+    display: inline-block;
+    align-items: center; /* Вертикальное выравнивание по центру */
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+    margin-top: 30px !important; /* Оставляем без изменений */
+}
+
+.star-rating {
+    display: inline-block;
+    width: 23.33px;
+    height: 21.93px;
+    margin-top: 5px;
+    margin-left: -5px; /*слева*/
+    gap: 0px;
+    opacity: 1; /* Замените на 1, если хотите, чтобы звезда была видна */
+    position: absolute; /* Установите позицию для размещения в правильном месте */
+}
+
+.product-rating {
+    display: inline-block;
+    width: 27px;
+    height: 20.97px;
+    margin-top: 7px;
+    margin-left: 30px; /* Изменяем значение, чтобы расположить текст справа от звезды */
+    gap: 0px;
+    opacity: 1; /* Здесь также замените на 1, если хотите, чтобы рейтинг был виден */
+    font-family: Montserrat;
+    font-size: 17px;
+    color: #838383;
+    font-weight: 600;
+    line-height: 20.72px;
+    text-align: left;
+    position: absolute; /* Установите позицию для размещения в правильном месте */
+}
+
+
+.buy-button {
+    font-family: 'Montserrat', sans-serif; /* Шрифт */
+    color: #000000;                        /* Цвет текста */
+    font-size: 17px;                      /* Размер шрифта */
+    font-weight: 600;                     /* Жирность шрифта */
+    line-height: 20.72px;                 /* Высота строки */
+    text-align: left;                     /* Выравнивание текста */
+    width: 65px;                          /* Ширина кнопки */
+    height: 21px;                         /* Высота кнопки */
+    position: relative;                   /* Установка абсолютного позиционирования для корректного использования top и left */
+    top: 359.35px;                        /* Вертикальное смещение */
+    left: 249px;                          /* Горизонтальное смещение */
+    right: 18px;
+    gap: 0px;                             /* Интервал между элементами, если такие есть */
+    opacity: 1;                           /* Прозрачность (0 - невидимый) */
+    background-color: transparent;        /* Установка фона прозрачным */
+    border: none;                         /* Удаление границы */
+    border-radius: 0;                    /* Установка радиуса границы на 0 (убрать скругление) */
+    cursor: pointer;                      /* Изменение курсора на указатель при наведении */
+}
+
+.footer {
+    border-radius: 30px 30px 0px 0px;
+    top: 50px;
+    height: 110px;
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    margin: 0 205px; /* Устанавливаем отступы слева и справа */
+    width: calc(100% - 360px); /* Подгоняем ширину, учитывая отступы (205 * 2) */
+}
+
+.footer-name  {
+    width: 85px;
+    height: 30px;
+    top: 1509px;
+    margin-left: 30px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30.48px;
+    text-align: left;
+    color: #101010;
+}
+
+.footer-content {
+    display: flex; /* Используем флексбокс для создания двух столбцов */
+    justify-content: space-between; /* Распределяем пространство между столбцами */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    width: 427px; /* Указываем ширину для контейнера */
+    height: 82.8px; /* Указываем высоту для контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    margin-top: -30px;
+    
+}
+
+.column {
+    text-align: left; 
+    gap: 10px; /* Задаем промежуток между элементами, можете изменить при необходимости */
+}
+
+.footer-content a {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    display: block; /* Заставляем ссылки занимать всю ширину */
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    opacity: 1; /* Полная видимость ссылок */
+}
+
+.language-links {
+    display: flex; /* Используем flex для размещения ссылок в одну строку */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.orange-link {
+    font-size: 15px !important;
+    line-height: 18.29px !important;
+    color: #FFA542 !important; /* Цвет текста для Рус */
+    display: inline-flex; /* Используем flex для выравнивания иконки и текста */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.orange-link img.icon {
+    margin-right: 5px; /* Отступ справа от иконки */
+    vertical-align: middle; /* Выравнивание иконки по центру строки */
+}
+
+.language-links a {
+    font-size: 15px !important;
+    line-height: 18.29px !important;
+    margin-left: 10px; /* Отступ между ссылками */
+}
+
+.messenger-icons {
+    display: flex;
+    margin-right: 20px;
+    margin-top: 40px;
+    gap: 10px; /* Расстояние между иконками */
+}
+
+.messenger-icon {
+    width: 30px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+}
+
+/* Стили для названия товара - "Наушники" */
+.product-title1 {
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+    width: 114px;
+    height: 24px;
+    position: relative; /* Позиционирование относительно родителя */
+    top: 50px; /* Отступ сверху */
+    left: 165px; /* Отступ слева */
+    gap: 50px; /* Интервал между элементами (в данном случае не используется) */
+    opacity: 1; /* Изначально невидимо */
+    font-family: 'Montserrat', sans-serif; /* Шрифт для названия товара */
+    font-size: 20px; /* Размер шрифта для названия товара */
+    font-weight: 600; /* Жирность шрифта */
+    line-height: 50.38px; /* Высота строки */
+    text-align: left; /* Выравнивание текста */
+    color: #1C1C27; /* Цвет текста */
+}
+
+/*карточка для корзины с отображением товара*/
+.product-cardcart {
+    display: inline-block; 
+    width: 633px; /* Изменено на 100% для заполнения родительского контейнера */
+    height: 218px; /* Высота оставлена прежней */
+    max-width: 800px; /* Максимальная ширина карточки */
+    position: relative;
+
+    left: 140px;
+    margin: 0 25px 50px; /* Отступы справа и слева по 25px, снизу 30px */
+
+    top: 80px; /* Отступ после шапки сайта */
+    opacity: 1;
+    border-radius: 30px; 
+    box-shadow: 0 2px 10px #EAEAEA; 
+    background-color: #fff; 
+}
+
+/*картинка продукта в карточке*/
+.product-image1 {
+    width: 155px;
+    height: 150px;
+    position: relative;
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Центрируем изображение */
+    opacity: 1;
+}
+
+/*модель товара для корзины*/
+.model-title1 {
+    width: 396px;
+    height: 21px;
+    margin-top: -70px; /* Отступ сверху */
+    margin-left: 230px;
+
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 20.72px;
+    color: #1C1C27;
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+}
+
+.product-price1 {
+    width: 59px;
+    height: 21px;
+    margin-top: 10px;
+    left: 452px;
+    gap: 0px;
+    opacity: 1px;
+
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    text-align: right;
+    color: #AAAAAA;
+    margin-left: 225px;
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+}
+
+/*цена на товаре снизу справа в углу*/
+.content-price2 {
+    width: 19.93px;
+    height: 17px;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    justify-content: flex-end; /* Выравнивание по левой стороне */
+    white-space: nowrap; /* Предотвращает перенос текста на другую строку */
+    padding: auto;
+    gap: 0px;
+    /*padding: 100px; /* Убираем внутренние отступы */
+    margin-left: 580px;
+    opacity: 1;
+    top: 245px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.vector-icon {
+    width: 19.93px;
+    height: 17px;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    justify-content: flex-end; /* Выравнивание по левой стороне */
+    gap: 0px;
+    padding: 0; /* Убираем внутренние отступы */
+    opacity: 1;
+    margin: -110px 580px; /*взаимосвязано с quantity-controls */
+    display: flex;
+    align-items: center;
+}
+
+/*кнопки - +*/
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 225px 25px; /*координаты - +, чтобы находилось под картинкой товара*/
+    justify-content: flex-start; /* Выравнивание по левой стороне */
+}
+
+.quantity-controls button {
+    border: none;
+    background-color: #FFCE7F; /* Цвет кнопки */
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;    
+    width: 30px;
+    height: 30px;
+    top: 299px;
+    margin: 0px 20px;
+    gap: 0px;
+    opacity: 1;
+    justify-content: flex-start; /* Выравнивание по левой стороне */
+
+}
+
+.quantity-controls button:hover {
+    background-color: #9facb5; /* Цвет кнопки при наведении */
+}
+
+/*карточка для оформления заказа*/
+.cart-summary {
+    display: flex; /* Используем flex для управления */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    align-items: stretch; /* Выровнять элементы по ширине */
+    width: 348px; 
+    height: auto; /* Высота будет адаптироваться к содержимому */
+    margin: -185px 985px; /* Центрирование по горизонтали */
+    opacity: 1;
+    border-radius: 30px; 
+    box-shadow: 0 2px 10px rgba(234, 234, 234, 0.5); /* Добавил прозрачность для тени */
+    background-color: #fff; 
+    padding: 20px; /* Умень внутренние отступы для лучшего вида */
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    opacity: 1;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    text-align: left;
+
+}
+
+/*кнопка перейти к оформлению*/
+.checkout-button {
+    text-align: center; /* Выравнивание текста по центру */
+    width: 112%; /* Занять всю ширину */
+    margin: -20px;
+    height: 65px; 
+    background-color: black; 
+    border: none;
+    border-radius: 20px; /* Закругление углов кнопки */
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+    margin-top: 20px; /* Отступ сверху для отделения от предыдущего контента */
+    opacity: 1;
+
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20.72px;
+
+}
+
+/*"итого" - подпись */
+.total-label {
+    width: 56.12px;
+    height: 18px;
+    top: 155px;
+    left: 946.43px;
+    gap: 0px;
+
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    text-align: left;
+}
+
+
+.checkout-button:hover {
+    background-color: #767c80; /* Цвет кнопки при наведении */
+}
+
+.store-link {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Унаследует цвет от родительского элемента */
+}
+

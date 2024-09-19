@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>QPICK</title> 
+    <link rel="stylesheet" href="styles.css"> 
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-router-dom@5/umd/react-router-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const ProductCardCart = ({ image, title, price, icon, price2, onIncrease, onDecrease, quantity }) => {
+            return (
+                <div className="product-cardcart">
+                    <img src={image} alt={title} className="product-image1" />
+                    <div className="model-title1">{title}</div>
+                    <div className="product-price1">{price} ₽</div>
+                    <img src={icon} alt={title} className="vector-icon" />
+                    <div className="content-price2">{price2} ₽</div>
+    
+                    <div className="quantity-controls">
+                        <button onClick={onDecrease}>-</button>
+                        <span>{quantity}</span>
+                        <button onClick={onIncrease}>+</button>
+                    </div>
+                </div>
+            );
+        };
+    
+        const CartSummary = ({ price, quantity }) => {
+            return (
+                <div className="cart-summary">
+                    <div className="total-price-container">
+                        <span className="total-label">ИТОГО</span>
+                        <span className="total-price">₽ {(price).toFixed(2)}</span>
+                    </div>
+                    <button className="checkout-button">Перейти к оформлению</button>
+                </div>
+            );
+        };
+    
+        const wiredProducts = [
+            { image: "Image1.png", title: "Apple BYZ S852I", price: 2927, icon: "Vector.png", price2: 2927 },
+        ];
+    
+        const App = () => {
+            const [cart, setCart] = React.useState(wiredProducts.map(product => ({ ...product, quantity: 1 })));
+    
+            const increaseQuantity = (index) => {
+                const newCart = [...cart];
+                newCart[index].quantity += 1;
+                setCart(newCart);
+            };
+    
+            const decreaseQuantity = (index) => {
+                const newCart = [...cart];
+                if (newCart[index].quantity > 1) {
+                    newCart[index].quantity -= 1;
+                    setCart(newCart);
+                }
+            };
+    
+            // Вычисление общей цены и количества
+            const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+            const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
+    
+            return (
+                <div>
+                    <div className="header">
+                        <a href="index.html" className="store-link">
+                            <div className="store-name" onClick={() => window.scrollTo(0, 0)}>QPICK</div>
+                        </a>
+                        <img src="heart.png" alt="Избранное" className="icon favorite-icon" />                  
+                        <img src="shoppingcart.png" alt="Корзина" className="icon cart-icon" />
+                    </div>
+    
+                    <div className="product-title1">Корзина</div>
+                    <div className="product">
+                        {cart.map((product, index) => (
+                            <ProductCardCart
+                                key={product.title} 
+                                {...product} 
+                                onIncrease={() => increaseQuantity(index)} 
+                                onDecrease={() => decreaseQuantity(index)} 
+                                quantity={product.quantity} 
+                            />
+                        ))}
+                    </div>
+    
+                    {/* Добавляем компонент CartSummary */}
+                    <CartSummary price={totalPrice} quantity={totalQuantity} />
+                </div>
+            );
+        };
+    
+        // Рендерим приложение
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

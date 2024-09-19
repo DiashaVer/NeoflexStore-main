@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>QPICK</title> 
+    <link rel="stylesheet" href="styles.css"> 
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-router-dom@5/umd/react-router-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const ProductCard = ({ image, title, price, lastPrice, rating }) => {
+            return (
+                <div className="product-card">
+                    <img src={image} alt={title} className="product-image" />
+                    <div className="product-info">
+                        <div className="model-title">{title}</div>
+                        <div className="product-price">{price} ₽</div>
+                        {lastPrice && <div className="product-lastprice">{lastPrice} ₽</div>}
+
+                        <div className="rating-conteiner">
+                         <img src="star.png" alt="Рейтинг" className="star-rating" />
+                        
+                         <div className="product-rating">{rating}</div>
+                        </div>
+
+
+                    </div>
+                    <button className="buy-button">Купить</button>
+                </div>
+            );
+        };
+
+        const Footer = () => {
+            return (
+                <footer className="footer">
+                    <div className="footer-name">
+                        <p> QPICK</p>
+                    </div>
+
+                    <div className="footer-content">
+                        <div className="column">
+                            <a href="#">Избранное</a>
+                            <a href="#">Корзина</a>
+                            <a href="#">Контакты</a>
+                        </div>
+                        <div className="column">
+                            <a href="#">Условия сервиса</a>
+                            <div className="language-links" style={{ marginTop: '25px' }}>
+                                <a href="#" className="orange-link">
+                                    <img src="RU.png" alt="Иконка" className="icon" /> Рус
+                                </a>
+                                <a href="#">Eng</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Иконки мессенджеров */}
+                    <div className="messenger-icons" style={{ position: 'absolute', top: '10px', right: '10px' }}>
+                        <a href="https://m.vk.com" target="_blank" rel="noopener noreferrer">
+                            <img src="VK.png" alt="VK" className="messenger-icon" />
+                        </a>
+                        <a href="https://t.me/your-username" target="_blank" rel="noopener noreferrer">
+                            <img src="Telegram.png" alt="Telegram" className="messenger-icon" />
+                        </a>
+                        <a href="https://faq.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                            <img src="Whatsapp.png" alt="Viber" className="messenger-icon" />
+                        </a>
+                    </div>
+                </footer>
+            );
+        };
+
+        const App = () => {
+            const wiredProducts = [
+                { image: "Image1.png", title: "Apple BYZ S852I", price: "2927", lastPrice: "3527", rating: "4.7" },
+                { image: "Image2.png", title: "Apple EarPods", price: "2327", rating: "4.5" },
+                { image: "Image3.png", title: "Apple EarPods", price: "2327", rating: "4.5" },
+		        { image: "Image1.png", title: "Apple BYZ S852I", price: "2927", lastPrice: "3527", rating: "4.7" },
+                { image: "Image2.png", title: "Apple EarPods", price: "2327", rating: "4.5" },
+                { image: "Image3.png", title: "Apple EarPods", price: "2327", rating: "4.5" }
+            ];
+
+            const wirelessProducts = [
+                { image: "air1.png", title: "Apple AirPods", price: "9527", rating: "4.7" },
+                { image: "air2.png", title: "GERLAX GH-04", price: "6527", rating: "4.7" },
+                { image: "air3.png", title: "BOROFONE BO4", price: "7527", rating: "4.7" }
+            ];
+
+            return (
+                <div>
+                    <div className="header">
+                       
+                        <div className="store-name" onClick={() => window.scrollTo(0, 0)}>QPICK</div>
+                        <img src="heart.png" alt="Избранное" className="icon favorite-icon" />
+
+                        
+                        <a href="cart.html">
+                            <img src="shoppingcart.png" alt="Корзина" class="icon cart-icon" />
+                        </a>
+
+                        
+
+                    </div>
+
+                    <div className="product-title">Наушники</div>
+                    <div className="product">
+                        {wiredProducts.map((product) => (
+                            <ProductCard key={product.title} {...product} />
+                        ))}
+                    </div>
+
+                    <div className="product-title">Беспроводные наушники</div>
+                    <div className="product">
+                        {wirelessProducts.map((product) => (
+                            <ProductCard key={product.title} {...product} />
+                        ))}
+                    </div>
+
+                    <Footer /> {/* Добавляем компонент Footer */}
+                </div>
+            );
+        };
+
+        // Рендеринг главного компонента App
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
