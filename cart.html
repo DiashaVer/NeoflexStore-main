@@ -35,16 +35,65 @@
         };
     
         const CartSummary = ({ price, quantity }) => {
+            
+
             return (
+                
                 <div className="cart-summary">
                     <div className="total-price-container">
                         <span className="total-label">ИТОГО</span>
                         <span className="total-price">₽ {(price).toFixed(2)}</span>
                     </div>
-                    <button className="checkout-button">Перейти к оформлению</button>
+                    <button className="checkout-button" onClick={goToCheckout}>Перейти к оформлению</button>
                 </div>
             );
         };
+
+        const goToCheckout = () => {
+             window.location.href = "consumer.html"; // Переход на новую страницу
+            };
+
+
+        const Footer1 = () => {
+            return (
+                <footer className="footer1">
+                    <div className="footer-name">
+                        <p> QPICK</p>
+                    </div>
+
+                    <div className="footer-content">
+                        <div className="column">
+                            <a href="#">Избранное</a>
+                            <a href="#">Корзина</a>
+                            <a href="#">Контакты</a>
+                        </div>
+                        <div className="column">
+                            <a href="#">Условия сервиса</a>
+                            <div className="language-links" style={{ marginTop: '25px' }}>
+                                <a href="#" className="orange-link">
+                                    <img src="RU.png" alt="Иконка" className="icon" /> Рус
+                                </a>
+                                <a href="#">Eng</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Иконки мессенджеров */}
+                    <div className="messenger-icons" style={{ position: 'absolute', top: '10px', right: '10px' }}>
+                        <a href="https://m.vk.com" target="_blank" rel="noopener noreferrer">
+                            <img src="VK.png" alt="VK" className="messenger-icon" />
+                        </a>
+                        <a href="https://t.me/your-username" target="_blank" rel="noopener noreferrer">
+                            <img src="Telegram.png" alt="Telegram" className="messenger-icon" />
+                        </a>
+                        <a href="https://faq.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                            <img src="Whatsapp.png" alt="Viber" className="messenger-icon" />
+                        </a>
+                    </div>
+                </footer>
+            );
+        };
+
     
         const wiredProducts = [
             { image: "Image1.png", title: "Apple BYZ S852I", price: 2927, icon: "Vector.png", price2: 2927 },
@@ -70,6 +119,7 @@
             // Вычисление общей цены и количества
             const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
             const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
+
     
             return (
                 <div>
@@ -96,7 +146,9 @@
     
                     {/* Добавляем компонент CartSummary */}
                     <CartSummary price={totalPrice} quantity={totalQuantity} />
+                    <Footer1 /> {/* Добавляем компонент Footer */}
                 </div>
+                
             );
         };
     

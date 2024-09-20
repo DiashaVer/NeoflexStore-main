@@ -8,7 +8,7 @@ body {
 
 /* Стили для шапки сайта */
 .header {
-    position: fixed;
+    position: fixed; /*был fixed*/
     top: 0;
     z-index: 1000; /* Устанавливаем высокий уровень z-index, чтобы элемент отображался поверх остального контента */
     /*box-shadow: 0 2px 4px #0000001a; /* Добавляем тень для эффекта отделения от контента */
@@ -60,6 +60,8 @@ body {
     gap: 10px;
     margin-left: 10px; 
     opacity: 1px;
+    /*display: flex; /* Используем flexbox для выравнивания элементов */
+    
 }
 
 /* корзина */
@@ -72,7 +74,27 @@ body {
     gap: 0px;
     opacity: 1px;
     margin-left: 45px;
+
 }
+
+/*счетчик корзины*/
+.item-count {
+    position: absolute; /* Абсолютное позиционирование для размещения счетчика */
+    width: 15px;
+    height: 15px;
+    top: 13px; /* Вертикальное смещение */
+    right: 180px; /* Горизонтальное смещение */
+    background-color: #FFA542 ;/* Цвет фона */
+    color: white; /* Цвет текста */
+    font-size: 15px; /* Размер шрифта для названия товара */
+    border-radius: 50%; /* Круглая форма */
+    display: flex; /* Центрируем текст по горизонтали и вертикали */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Изначально невидимый */
+    transition: opacity 0.3s; /* Плавный переход для появления */
+}
+
 
 /* Стили для названия товара - "Наушники" */
 .product-title {
@@ -235,15 +257,30 @@ body {
 
 .footer {
     border-radius: 30px 30px 0px 0px;
-    top: 50px;
-    height: 110px;
+    top: 50px;/*50px*/
+    height: 110px; /*110px*/
     background-color: #FFFFFF;
     color: black;
     text-align: center;
     padding: 20px 0;
-    position: relative;
+    position: relative; /*relative*/
     bottom: 0;
-    margin: 0 205px; /* Устанавливаем отступы слева и справа */
+    margin: 0 200px; /* Устанавливаем отступы слева и справа */
+    width: calc(100% - 360px); /* Подгоняем ширину, учитывая отступы (205 * 2) */
+}
+
+/*чтобы не сьезжал футер в cart.html*/
+.footer1 {
+    border-radius: 30px 30px 0px 0px;
+    top: auto;/*50px*/
+    height: auto; /*110px*/
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed; /*relative*/
+    bottom: 0;
+    margin: 0 200px; /* Устанавливаем отступы слева и справа */
     width: calc(100% - 360px); /* Подгоняем ширину, учитывая отступы (205 * 2) */
 }
 
